@@ -1,0 +1,8 @@
+pip
+flask
+flask-rESTful
+scikit-learn
+numpy
+pickle
+itertools
+json
