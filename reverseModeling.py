@@ -2,9 +2,16 @@ import numpy as np
 from numpy.random import normal
 import pickle
 import itertools
+import zipfile as zf
 
-float_package = pickle.load(open('flotation_model.pickle', 'rb'))
-smelt_package = pickle.load(open('smelting_model.pickle', 'rb'))
+# float_package = pickle.load(open('flotation_model.pickle', 'rb'))
+# smelt_package = pickle.load(open('smelting_model.pickle', 'rb'))
+
+with zf.ZipFile('flotation_model.zip') as myzip1:
+    float_package = pickle.load(myzip1.open('flotation_model.pickle','r'))
+
+with zf.ZipFile('smelting_model.zip') as myzip:
+    smelt_package = pickle.load(myzip.open('smelting_model.pickle','r'))
 
 def max_prod(package, constraints):
     if package == 'float': package = float_package
