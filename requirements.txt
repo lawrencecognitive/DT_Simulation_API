@@ -1,5 +1,6 @@
-Flask==1.1.1
-Flask-RESTful==0.3.7
+gunicorn==19.10.0
+flask==1.1.1
+flask-RESTful==0.3.7
 nltk==3.4.5
 numexpr==2.7.0
 numpy==1.16.3
