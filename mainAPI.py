@@ -5,12 +5,15 @@ This is the main python script called to return.
 
 from flask import Flask, make_response, jsonify
 from flask_restful import reqparse, Api, Resource
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from reverseModeling import max_prod
 
 app = Flask(__name__)
 CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 api = Api(app)
+
+
 
 float_package = None
 smelt_package = None
@@ -58,6 +61,7 @@ def convertReturn(ls):
 
 
 @app.route('/')
+@cross_origin()
 def index():
     return "Hello Flask"
 
