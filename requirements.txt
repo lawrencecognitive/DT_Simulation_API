@@ -1,6 +1,7 @@
 gunicorn
 flask
 flask-RESTful
+flask-cors
 nltk
 numexpr
 numpy

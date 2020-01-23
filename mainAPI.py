@@ -5,10 +5,13 @@ This is the main python script called to return.
 
 from flask import Flask, make_response, jsonify
 from flask_restful import reqparse, Api, Resource
+from flask_cors import CORS
 from reverseModeling import max_prod
 
 app = Flask(__name__)
+CORS(app)
 api = Api(app)
+
 float_package = None
 smelt_package = None
 
