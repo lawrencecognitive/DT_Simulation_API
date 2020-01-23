@@ -7,11 +7,11 @@ import zipfile as zf
 # float_package = pickle.load(open('flotation_model.pickle', 'rb'))
 # smelt_package = pickle.load(open('smelting_model.pickle', 'rb'))
 
-with zf.ZipFile('flotation_model.zip') as myzip1:
-    float_package = pickle.load(myzip1.open('flotation_model.pickle','r'))
+with zf.ZipFile('flotation_model.zip') as flotation_model:
+    float_package = pickle.load(flotation_model.open('flotation_model.pickle'))
 
-with zf.ZipFile('smelting_model.zip') as myzip:
-    smelt_package = pickle.load(myzip.open('smelting_model.pickle','r'))
+with zf.ZipFile('smelting_model.zip') as smelting_model:
+    smelt_package = pickle.load(smelting_model.open('smelting_model.pickle'))
 
 def max_prod(package, constraints):
     if package == 'float': package = float_package
